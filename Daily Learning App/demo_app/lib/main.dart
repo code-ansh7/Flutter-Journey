@@ -19,22 +19,25 @@ class MyApp extends StatelessWidget {
         body: Container(
           margin: EdgeInsets.all(100),
           height: 200,
-          width: 300,
+          width: 280,
           color: Colors.blueAccent,
           child: Padding(
-            padding: EdgeInsets.all(1),
+            padding: EdgeInsets.all(10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text("🚀"),
-                Text("AnshVerse"),
-                Text("Flutter Developer"),
+                Text("Demo App"),
+                Text("Flutter Developer..."),
                 Center(
                   child: Container(
-                    height: 20,
-                    width: 30,
-                    color: Colors.cyan,
-                    child: Text("@"),
+                    margin: EdgeInsets.all(15),
+                    height: 80,
+                    width: 120,
+                    color: const Color.fromRGBO(28, 216, 141, 1),
+                    alignment: Alignment.center,
+                    padding:EdgeInsets.all(5),
+                    child: Text("For learning flutter widgets."),
                   ),
                 ),
               ],
