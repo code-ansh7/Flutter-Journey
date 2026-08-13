@@ -5,11 +5,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const LoveApp());
 }
-
-// ======================================================
-// APP ROOT
-// ======================================================
-
+ 
 class LoveApp extends StatelessWidget {
   const LoveApp({super.key});
 
