@@ -40,8 +40,21 @@ class MyApp extends StatelessWidget {
             width: 320,
             height: 180,
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 34, 70, 88),
-              borderRadius: BorderRadius.circular(20),
+              shape: BoxShape.rectangle,
+              color: const Color.fromARGB(255, 30, 60, 74),
+              borderRadius: BorderRadius.circular(25),
+              border: Border.all(
+                color: Colors.cyanAccent, 
+                width: 1,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.cyanAccent,
+                  blurRadius: 15,//Shadow kitni blurred hogi
+                  spreadRadius: 5,//Shadow kitni spread hogi
+                  offset: Offset(0, 4),//Shadow lis direction mai jayegi(x, y)
+                ),
+              ],
             ),
             // padding: EdgeInsets.all(20),
             child: Row(
