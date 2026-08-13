@@ -4,75 +4,6 @@ void main() {
   runApp(const MyApp());
 }
 
-//MyApp Home Screen.
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     String name = "Ansh Rastogi";
-//     String goal = "Flutter Developer";
-
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: Scaffold(
-//         backgroundColor: Colors.blueGrey.shade900,
-//         appBar: AppBar(
-//           backgroundColor: Colors.black87,
-//           title: Text(
-//             "My Learning App",
-//             style: TextStyle(color: Colors.cyanAccent),
-//           ),
-//         ),
-//         body: Center(
-//           child: Container(
-//             height: 260,
-//             width: 300,
-//             color: Colors.blueGrey.shade800,
-//             alignment: Alignment.center,
-//             child: Column(
-//               //For Vertical Aligning
-//               mainAxisAlignment:
-//                   MainAxisAlignment.center, //end, start, center, spaceArround
-//               //For Horizontal Aligning
-//               crossAxisAlignment: CrossAxisAlignment.center,
-//               children: [
-//                 Text("🚀"),
-//                 Text(name, style: TextStyle(color: Colors.white)),
-//                 Text(goal, style: TextStyle(color: Colors.cyanAccent)),
-//                 Text(
-//                   "Building with Flutter",
-//                   style: TextStyle(color: Colors.white70),
-//                 ),
-//                 Container(
-//                   height: 100,
-//                   width: 250,
-//                   color: Colors.black54,
-//                   child: Row(
-//                     children: [
-//                       const Text("🚀"),
-
-//                       Column(
-//                         children: [
-//                           Text(name, style: TextStyle(color: Colors.white)),
-//                           Text(
-//                             goal,
-//                             style: TextStyle(color: Colors.cyanAccent),
-//                           ),
-//                         ],
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -85,14 +16,21 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       home: Scaffold(
-        backgroundColor: Colors.blueGrey.shade900,
+        backgroundColor: const Color.fromARGB(255, 23, 46, 57),
 
         appBar: AppBar(
+          toolbarHeight: 80,
           backgroundColor: Colors.black87,
-          title: const Text(
-            "Row & Column Practice",
-            style: TextStyle(
-              color: Colors.cyanAccent,
+          title: Center(
+            child: Row(
+              children: [
+                Text(
+                  "AnshVerse",
+                  style: TextStyle(color: Colors.cyanAccent, fontSize: 24),
+                ),
+                Spacer(), //Used in Appbars, header because it creates spaces b/w the widgets feel like Expanded
+                Text("🎭", style: TextStyle(fontSize: 24)),
+              ],
             ),
           ),
         ),
@@ -101,48 +39,62 @@ class MyApp extends StatelessWidget {
           child: Container(
             width: 320,
             height: 180,
-            color: Colors.blueGrey.shade800,
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 34, 70, 88),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            // padding: EdgeInsets.all(20),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
 
               children: [
-                const Text(
-                  "🚀",
-                  style: TextStyle(
-                     fontSize: 40,
+                const Text("🚀", style: TextStyle(fontSize: 40)), //child 1
+
+                SizedBox(width: 20), //for horizontal spacing
+
+                Flexible(
+                  fit: FlexFit.tight,
+                  child: Column(
+                    //child 2
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+
+                    children: [
+                      Text(
+                        //child 1.a
+                        name,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
+
+                      const SizedBox(height: 8), //for vertical spacing
+
+                      Text(
+                        //child 1.b
+                        goal,
+                        style: const TextStyle(
+                          color: Colors.cyanAccent,
+                          fontSize: 16,
+                        ),
+                      ),
+
+                      const SizedBox(height: 5),
+
+                      const Text(
+                        //child 1.c
+                        "Building with Flutter",
+                        style: TextStyle(color: Colors.white70),
+                      ),
+                    ],
                   ),
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
 
-                  children: [
-                    Text(
-                      name,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),
-                    ),
+                SizedBox(width: 20),
 
-                    Text(
-                      goal,
-                      style: const TextStyle(
-                        color: Colors.cyanAccent,
-                        fontSize: 16,
-                      ),
-                    ),
-
-                    const Text(
-                      "Building with Flutter",
-                      style: TextStyle(
-                        color: Colors.white70,
-                      ),
-                    ),
-                  ],
-                ),
-                const Text("🚀",)
+                const Text("🎯", style: TextStyle(fontSize: 40)), //child 3
               ],
             ),
           ),
