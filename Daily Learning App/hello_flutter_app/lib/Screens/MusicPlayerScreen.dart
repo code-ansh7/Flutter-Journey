@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter_app/Screens/ModernScreen.dart';
 
 class Musicplayerscreen extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class Musicplayerscreen extends StatelessWidget {
 
       body: Center(
         child: Container(
-          height: 480,
+          height: 500,
           width: 320,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
@@ -149,13 +150,31 @@ class Musicplayerscreen extends StatelessWidget {
                         width: 2,
                       )
                     ),
-                    child: Text("⏭", 
+                    child: const Text("⏭", 
                       style: TextStyle(
                         color: const Color.fromARGB(255, 120, 68, 211),
                       ),
                     ),
                   ),
                 ],
+              ),
+
+              SizedBox(height: 7,),
+
+              TextButton(
+                onPressed: (){
+                   Navigator.push(
+                    context, 
+                    MaterialPageRoute(
+                      builder: (context) => ModernScreen()
+                    ),
+                  );
+                }, 
+                child: const Text("View AnshVerse",
+                  style: TextStyle(
+                    color: Colors.deepPurple
+                  ),
+                )
               )
             ],
           ),

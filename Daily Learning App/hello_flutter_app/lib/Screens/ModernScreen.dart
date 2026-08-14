@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ModerScreen extends StatelessWidget {
+class ModernScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String name = "Ansh Rastogi";
@@ -11,13 +11,17 @@ class ModerScreen extends StatelessWidget {
 
       appBar: AppBar(
         toolbarHeight: 80,
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.cyanAccent,
         title: Center(
           child: Row(
             children: [
               Text(
                 "AnshVerse",
-                style: TextStyle(color: Colors.cyanAccent, fontSize: 24),
+                style: TextStyle(
+                  color: Colors.black54, 
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold
+                ),
               ),
               Spacer(), //Used in Appbars, header because it creates spaces b/w the widgets feel like Expanded
               Text("🎭", style: TextStyle(fontSize: 24)),
