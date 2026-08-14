@@ -13,7 +13,7 @@ class Musicplayerscreen extends StatelessWidget {
 
       body: Center(
         child: Container(
-          height: 430,
+          height: 450,
           width: 320,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
@@ -49,7 +49,7 @@ class Musicplayerscreen extends StatelessWidget {
 
               SizedBox(height: 18,),
 
-              Text("Building Lights",
+              Text("Blue Eyes",
                 style: TextStyle(
                   color: Colors.black87,
                   fontSize: 22,
@@ -59,12 +59,92 @@ class Musicplayerscreen extends StatelessWidget {
 
               SizedBox(height: 5,),
 
-              Text("The Weekend",
+              Text("Yo Yo Honey Singh",
                 style: TextStyle(
                   color: Colors.black54,
                   fontSize: 15,
                 ),
               ),
+
+              SizedBox(height: 20,),
+
+              Container(
+                height: 5,
+                width: 250,
+                decoration: BoxDecoration(
+                  color: Colors.black12,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+
+              SizedBox(height: 5,),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text("0:42",
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 12,
+                    ),
+                  ),
+                  Text("3:45",
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 7,),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  OutlinedButton(
+                    onPressed: (){}, 
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(
+                        color: Colors.deepPurple,
+                        width: 2,
+                      ),
+                    ),
+                    child: Text("⏮", 
+                      style: TextStyle(
+                        color: Colors.deepPurple,
+                      ),
+                    )
+                  ),
+
+                  ElevatedButton(
+                    onPressed: (){}, 
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.deepPurple,
+                    ),
+                    child: Text("▶",
+                      style: TextStyle(
+                        color: Colors.white
+                      ),
+                    )
+                  ),
+
+                  OutlinedButton(
+                    onPressed: (){}, 
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(
+                        color: Colors.deepPurple,
+                        width: 2,
+                      )
+                    ),
+                    child: Text("⏭", 
+                      style: TextStyle(
+                        color: const Color.fromARGB(255, 120, 68, 211),
+                      ),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),
