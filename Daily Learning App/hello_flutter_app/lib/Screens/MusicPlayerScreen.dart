@@ -13,7 +13,7 @@ class Musicplayerscreen extends StatelessWidget {
 
       body: Center(
         child: Container(
-          height: 450,
+          height: 480,
           width: 320,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
@@ -103,8 +103,12 @@ class Musicplayerscreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   OutlinedButton(
-                    onPressed: (){}, 
+                    onPressed: (){
+                      print("Previous pressed");
+                    }, 
                     style: OutlinedButton.styleFrom(
+                      shape: StadiumBorder(),
+                      minimumSize: Size(50, 50),
                       side: BorderSide(
                         color: Colors.deepPurple,
                         width: 2,
@@ -118,8 +122,12 @@ class Musicplayerscreen extends StatelessWidget {
                   ),
 
                   ElevatedButton(
-                    onPressed: (){}, 
+                    onPressed: (){
+                      print("Play Button Pressed");
+                    }, 
                     style: ElevatedButton.styleFrom(
+                      shape: CircleBorder(),
+                      minimumSize: Size(60, 60),
                       backgroundColor: Colors.deepPurple,
                     ),
                     child: Text("▶",
@@ -130,8 +138,12 @@ class Musicplayerscreen extends StatelessWidget {
                   ),
 
                   OutlinedButton(
-                    onPressed: (){}, 
+                    onPressed: (){
+                      print("Next pressed");
+                    }, 
                     style: OutlinedButton.styleFrom(
+                      shape: StadiumBorder(),
+                      minimumSize: Size(50, 50),
                       side: BorderSide(
                         color: Colors.deepPurple,
                         width: 2,
