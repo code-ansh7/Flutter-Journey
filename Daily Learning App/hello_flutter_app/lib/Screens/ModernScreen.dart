@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter_app/Screens/MyProfileScreen.dart';
+
+import 'package:hello_flutter_app/Screens/PremiumScreen.dart';
 
 class ModernScreen extends StatelessWidget {
   @override
@@ -11,16 +14,17 @@ class ModernScreen extends StatelessWidget {
 
       appBar: AppBar(
         toolbarHeight: 80,
-        backgroundColor: Colors.cyanAccent,
+        iconTheme: const IconThemeData(color: Colors.cyanAccent),
+        backgroundColor: const Color.fromARGB(255, 15, 30, 38),
         title: Center(
           child: Row(
             children: [
               Text(
                 "AnshVerse",
                 style: TextStyle(
-                  color: Colors.black54, 
+                  color: Colors.cyanAccent,
                   fontSize: 24,
-                  fontWeight: FontWeight.bold
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               Spacer(), //Used in Appbars, header because it creates spaces b/w the widgets feel like Expanded
@@ -32,8 +36,8 @@ class ModernScreen extends StatelessWidget {
 
       body: Center(
         child: Container(
-          width: 320,
-          height: 180,
+          width: 350,
+          height: 330,
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             color: const Color.fromARGB(255, 30, 60, 74),
@@ -57,41 +61,86 @@ class ModernScreen extends StatelessWidget {
               const Text("🚀", style: TextStyle(fontSize: 40)), //child 1
 
               SizedBox(width: 20), //for horizontal spacing
+              
+              Column(
+                //child 2
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
 
-              Flexible(
-                fit: FlexFit.tight,
-                child: Column(
-                  //child 2
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    //child 1.a
+                    name,
+                    style: const TextStyle(color: Colors.white, fontSize: 30),
+                  ),
 
-                  children: [
-                    Text(
-                      //child 1.a
-                      name,
-                      style: const TextStyle(color: Colors.white, fontSize: 20),
+                  const SizedBox(height: 8), //for vertical spacing
+
+                  Text(
+                    //child 1.b
+                    goal,
+                    style: const TextStyle(
+                      color: Colors.cyanAccent,
+                      fontSize: 25,
                     ),
+                  ),
 
-                    const SizedBox(height: 8), //for vertical spacing
+                  const SizedBox(height: 5),
 
-                    Text(
-                      //child 1.b
-                      goal,
-                      style: const TextStyle(
-                        color: Colors.cyanAccent,
-                        fontSize: 16,
+                  const Text(
+                    //child 1.c
+                    "Building with Flutter",
+                    style: TextStyle(color: Colors.white70),
+                  ),
+
+                  SizedBox(height: 5),
+
+                  Column(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PremiumScreen(),
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.cyanAccent,
+                          maximumSize: Size(170, 45),
+                          shape: StadiumBorder(),
+                        ),
+                        child: Text(
+                          "👑  GO PREMIUM",
+                          style: TextStyle(color: Colors.black),
+                        ),
                       ),
-                    ),
 
-                    const SizedBox(height: 5),
+                      SizedBox(height: 10),
 
-                    const Text(
-                      //child 1.c
-                      "Building with Flutter",
-                      style: TextStyle(color: Colors.white70),
-                    ),
-                  ],
-                ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Myprofilescreen(),
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.cyanAccent,
+                          maximumSize: Size(170, 45),
+                          shape: StadiumBorder(),
+                        ),
+                        child: Text(
+                          "👨‍💻 My Profile",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
 
               SizedBox(width: 20),

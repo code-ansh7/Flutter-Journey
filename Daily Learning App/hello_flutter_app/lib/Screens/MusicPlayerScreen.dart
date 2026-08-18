@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_flutter_app/Screens/ModernScreen.dart';
 
-class Musicplayerscreen extends StatelessWidget {
+class MusicplayerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,12 +9,19 @@ class Musicplayerscreen extends StatelessWidget {
 
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text("Spotify", style: TextStyle(color: Colors.black87)),
+        title: Center(
+          child: const Text("🎵Spotify", 
+            style: TextStyle(
+              color: Colors.black87,
+              fontWeight: FontWeight.bold,
+            )
+          ),
+        ),
       ),
 
       body: Center(
         child: Container(
-          height: 500,
+          height: 530,
           width: 320,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
@@ -41,7 +48,7 @@ class Musicplayerscreen extends StatelessWidget {
                   color: Color.fromARGB(255, 232, 224, 255),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Text("🎵", 
+                child: const Text("🎵", 
                   style: TextStyle(
                     fontSize: 65
                   )
@@ -50,7 +57,7 @@ class Musicplayerscreen extends StatelessWidget {
 
               SizedBox(height: 18,),
 
-              Text("Blue Eyes",
+              const Text("Blue Eyes",
                 style: TextStyle(
                   color: Colors.black87,
                   fontSize: 22,
@@ -60,7 +67,7 @@ class Musicplayerscreen extends StatelessWidget {
 
               SizedBox(height: 5,),
 
-              Text("Yo Yo Honey Singh",
+              const Text("Yo Yo Honey Singh",
                 style: TextStyle(
                   color: Colors.black54,
                   fontSize: 15,
@@ -83,13 +90,13 @@ class Musicplayerscreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text("0:42",
+                  const Text("0:42",
                     style: TextStyle(
                       color: Colors.black54,
                       fontSize: 12,
                     ),
                   ),
-                  Text("3:45",
+                  const Text("3:45",
                     style: TextStyle(
                       color: Colors.black54,
                       fontSize: 12,
@@ -129,7 +136,7 @@ class Musicplayerscreen extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       shape: CircleBorder(),
                       minimumSize: Size(60, 60),
-                      backgroundColor: Colors.deepPurple,
+                      backgroundColor:  Colors.deepPurple,
                     ),
                     child: Text("▶",
                       style: TextStyle(
