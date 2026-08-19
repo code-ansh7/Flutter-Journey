@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttter_lab/days/day_08_screens/SearchScreen.dart';
 
 class MusicPlayerScreen extends StatelessWidget {
   @override
@@ -6,14 +7,27 @@ class MusicPlayerScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
       appBar: AppBar(
-        title: Text("Spotify",
-          style: TextStyle(
-            color: Colors.cyanAccent,
-            fontWeight: FontWeight.bold
-          ),
-        ),
         backgroundColor: Colors.grey.shade800,
+        title: Row(
+          children: [
+            Text("Spotify",
+              style: TextStyle(
+                color: Colors.cyanAccent,
+                fontWeight: FontWeight.bold
+              ),
+            ),
+
+            Spacer(),
+
+            Text("Day-07",
+              style: TextStyle(
+                color: Colors.white
+              ),
+            ),
+          ],
+        ),
       ),
+
       body: Center(
         child: Container(
           height: 450,
@@ -103,7 +117,12 @@ class MusicPlayerScreen extends StatelessWidget {
               TextButton(
                 style: TextButton.styleFrom(foregroundColor: Colors.cyanAccent),
                 onPressed: () {
-                  print("View Details Pressed");
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SearchScreen()
+                  ),
+                );
                 },
                 child: Text("View Details"),
               ),

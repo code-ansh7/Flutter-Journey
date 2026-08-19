@@ -17,12 +17,24 @@ class _SearchScreenState extends State<SearchScreen>{
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
-        title: Text(
-          "Search Bar",
-          style: TextStyle(
-            color: Colors.grey.shade900,
-            fontWeight: FontWeight.bold,
-          ),
+        title: Row(
+          children: [
+            Text(
+              "Search Bar",
+              style: TextStyle(
+                color: Colors.grey.shade900,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            Spacer(),
+
+             Text("Day-08",
+              style: TextStyle(
+                color: Colors.white
+              ),
+            )
+          ],
         ),
         backgroundColor: Colors.teal,
       ),
@@ -40,7 +52,12 @@ class _SearchScreenState extends State<SearchScreen>{
               decoration: InputDecoration(
                 hintText: "Search Something...",
 
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: IconButton(
+                  onPressed: (){
+                    print(searchController.text);
+                  }, 
+                  icon: Icon(Icons.search)
+                ),
 
                 filled: true,
                 fillColor: Colors.white,
