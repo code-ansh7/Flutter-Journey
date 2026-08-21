@@ -124,7 +124,7 @@ class MusicPlayerScreen extends StatelessWidget {
                   ),
                 );
                 },
-                child: Text("View Details"),
+                child: Text("View Day - 08"),
               ),
           
               IconButton(
