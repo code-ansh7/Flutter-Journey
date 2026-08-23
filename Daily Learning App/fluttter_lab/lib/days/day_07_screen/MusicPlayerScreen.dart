@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttter_lab/days/day_08_screens/SearchScreen.dart';
+import 'package:fluttter_lab/days/day_08_screen/SearchScreen.dart';
 
 class MusicPlayerScreen extends StatelessWidget {
   @override
