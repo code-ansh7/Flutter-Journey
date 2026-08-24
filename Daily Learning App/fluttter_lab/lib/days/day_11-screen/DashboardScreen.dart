@@ -166,76 +166,96 @@ class IncomeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.green.withOpacity(0.10),
-            blurRadius: 12,
-            spreadRadius: 0,
-            offset: Offset(0, 4),
+    return Material(
+      child: InkWell(
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("IncomeCard One Tap Detected!")),
+          );
+        },
+        onDoubleTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("IncomeCard Double Tap Detected!")),
+          );
+        },
+        onLongPress: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("IncomeCard Long Press Detected!")),
+          );
+        },
+
+        child: Container(
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.green.withOpacity(0.10),
+                blurRadius: 12,
+                spreadRadius: 0,
+                offset: Offset(0, 4),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Icon
-          Container(
-            // width: 48,
-            // height: 48,
-            padding: EdgeInsets.all(10), //agr height,width na ho to
-            decoration: BoxDecoration(
-              color: Colors.green.shade50,
-              borderRadius: BorderRadius.circular(14),
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Icon
+              Container(
+                // width: 48,
+                // height: 48,
+                padding: EdgeInsets.all(10), //agr height,width na ho to
+                decoration: BoxDecoration(
+                  color: Colors.green.shade50,
+                  borderRadius: BorderRadius.circular(14),
+                ),
 
-            child: Icon(
-              Icons.trending_up_rounded,
-              size: 28,
-              color: Colors.green.shade700,
-            ),
+                child: Icon(
+                  Icons.trending_up_rounded,
+                  size: 28,
+                  color: Colors.green.shade700,
+                ),
+              ),
+
+              SizedBox(height: 14),
+
+              // Title
+              Text(
+                "Income",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey.shade600,
+                ),
+              ),
+
+              SizedBox(height: 6),
+
+              // Amount
+              Text(
+                "₹ 35,000",
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+              ),
+
+              SizedBox(height: 6),
+
+              // Growth
+              Text(
+                "+8.2% ↑",
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.green.shade700,
+                ),
+              ),
+            ],
           ),
-
-          SizedBox(height: 14),
-
-          // Title
-          Text(
-            "Income",
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey.shade600,
-            ),
-          ),
-
-          SizedBox(height: 6),
-
-          // Amount
-          Text(
-            "₹ 35,000",
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Colors.black87,
-            ),
-          ),
-
-          SizedBox(height: 6),
-
-          // Growth
-          Text(
-            "+8.2% ↑",
-            style: TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.w600,
-              color: Colors.green.shade700,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -246,74 +266,94 @@ class ExpenseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.red.withOpacity(0.10),
-            blurRadius: 12,
-            spreadRadius: 0,
-            offset: Offset(0, 4),
+    return Material(
+      child: InkWell(
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("ExpenseCard One Tap Detected!")),
+          );
+        },
+        onDoubleTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("ExpenseCard Double Tap Detected!")),
+          );
+        },
+        onLongPress: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("ExpenseCard Long Press Detected!")),
+          );
+        },
+
+        child: Container(
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.red.withOpacity(0.10),
+                blurRadius: 12,
+                spreadRadius: 0,
+                offset: Offset(0, 4),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // 🔴 Icon Box
-          Container(
-            // width: 48,
-            // height: 48,
-            padding: EdgeInsets.all(10), //agr height,width na ho to
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // 🔴 Icon Box
+              Container(
+                // width: 48,
+                // height: 48,
+                padding: EdgeInsets.all(10), //agr height,width na ho to
 
-            decoration: BoxDecoration(
-              color: Colors.red.shade50,
-              borderRadius: BorderRadius.circular(14),
-            ),
+                decoration: BoxDecoration(
+                  color: Colors.red.shade50,
+                  borderRadius: BorderRadius.circular(14),
+                ),
 
-            child: Icon(
-              Icons.trending_down_rounded,
-              size: 28,
-              color: Colors.red.shade700,
-            ),
+                child: Icon(
+                  Icons.trending_down_rounded,
+                  size: 28,
+                  color: Colors.red.shade700,
+                ),
+              ),
+
+              SizedBox(height: 14),
+
+              Text(
+                "Expense",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey.shade600,
+                ),
+              ),
+
+              SizedBox(height: 6),
+
+              Text(
+                "₹ 10,420",
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+              ),
+
+              SizedBox(height: 6),
+
+              Text(
+                "-4.5% ↓",
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.red.shade700,
+                ),
+              ),
+            ],
           ),
-
-          SizedBox(height: 14),
-
-          Text(
-            "Expense",
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey.shade600,
-            ),
-          ),
-
-          SizedBox(height: 6),
-
-          Text(
-            "₹ 10,420",
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Colors.black87,
-            ),
-          ),
-
-          SizedBox(height: 6),
-
-          Text(
-            "-4.5% ↓",
-            style: TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.w600,
-              color: Colors.red.shade700,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
