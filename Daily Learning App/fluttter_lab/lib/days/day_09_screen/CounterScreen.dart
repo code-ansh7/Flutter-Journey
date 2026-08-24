@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttter_lab/days/day_10_screen/LoginScreen.dart';
 
 class Counterscreen extends StatefulWidget {
   const Counterscreen({super.key});
@@ -111,6 +112,20 @@ class _CounterscreenState extends State<Counterscreen> {
                   });
                 },
                 child: Text("RESET COUNTER"),
+              ),
+
+              TextButton(
+                onPressed: (){
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(builder: (context) => LoginScreen())
+                  );
+                },
+                child: Text("View Day-09",
+                  style: TextStyle(
+                    color: Colors.blueAccent
+                  ),
+                ),
               ),
             ],
           ),

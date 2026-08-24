@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttter_lab/days/day_10_screen/GreetScreen.dart';
 import 'package:fluttter_lab/days/day_10_screen/LoginScreen.dart';
+import 'package:fluttter_lab/days/day_11-screen/DashboardScreen.dart';
 import 'package:fluttter_lab/practice/TestingScreen.dart';
 import 'package:fluttter_lab/appHome.dart';
 import 'package:fluttter_lab/practice/bmi_calculator.dart';
@@ -18,10 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: MusicPlayerScreen(),
-      // home: Greetscreen(),
-      // home: LoginScreen(),
-      home: AppHome(),
+      home: Dashboardscreen(),
+      // home: AppHome(),
     );
   }
 }

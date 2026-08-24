@@ -6,6 +6,7 @@ import 'package:fluttter_lab/days/day_10_screen/GreetScreen.dart';
 import 'package:fluttter_lab/days/day_10_screen/LoginScreen.dart';
 import 'package:fluttter_lab/practice/TestingScreen.dart';
 import 'package:fluttter_lab/practice/bmi_calculator.dart';
+import 'package:fluttter_lab/practice/calculator.dart';
 
 class AppHome extends StatelessWidget {
   @override
@@ -39,7 +40,10 @@ class AppHome extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Text("Day-07(MusicScreeen)"),
+                      child: Text(
+                        "Day-07(MusicScreeen)",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
 
                     TextButton(
@@ -51,7 +55,10 @@ class AppHome extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Text("Day-08(SearchScreeen)"),
+                      child: Text(
+                        "Day-08(SearchScreeen)",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
 
                     TextButton(
@@ -63,7 +70,10 @@ class AppHome extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Text("Day-09(CounterScreeen)"),
+                      child: Text(
+                        "Day-09(CounterScreeen)",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
 
                     Row(
@@ -78,9 +88,9 @@ class AppHome extends StatelessWidget {
                               ),
                             );
                           },
-                          child: Text("Day-10(GreetScreeen)",
+                          child: Text(
+                            "Day-10(GreetScreeen)",
                             style: TextStyle(color: Colors.white),
-
                           ),
                         ),
                         SizedBox(width: 10),
@@ -116,9 +126,7 @@ class AppHome extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => BMI(),
-                          ),
+                          MaterialPageRoute(builder: (context) => BMI()),
                         );
                       },
                       child: Text(
@@ -128,20 +136,30 @@ class AppHome extends StatelessWidget {
                     ),
 
                     TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Profile(),
-                              ),
-                            );
-                          },
-                          child: Text("Profile Screen",
-                            style: TextStyle(
-                              color: Colors.white
-                            ),
-                          ),
-                        ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Profile()),
+                        );
+                      },
+                      child: Text(
+                        "Profile Screen",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+
+                     TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Calculator()),
+                        );
+                      },
+                      child: Text(
+                        "Simple Calculator",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ],
                 ),
               ),

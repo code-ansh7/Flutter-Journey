@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 
-class HomePage extends StatefulWidget {
+class Calculator extends StatefulWidget {
   @override
-  State createState() => new HomePageState();
+  State createState() => new CalculatorState();
 }
 
-class HomePageState extends State<HomePage> {
+class CalculatorState extends State<Calculator> {
   var num1 = 0, num2 = 0, sum = 0;
 
   final TextEditingController t1 = new TextEditingController(text: "0");
@@ -54,9 +54,9 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Colors.blueGrey.shade900,
+      backgroundColor: Colors.white,
       appBar: new AppBar(
-        backgroundColor: Colors.blueGrey.shade800,
+        backgroundColor: Colors.cyanAccent,
         title: new Text("Calculator"),
       ),
       body: new Container(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttter_lab/days/day_10_screen/GreetScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -10,6 +11,11 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
   bool hidden = true;
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  String enteredEmail = "";
+  String enteredPassword = "";
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 SizedBox(height: 10),
                 TextFormField(
+                  controller: emailController,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Email is required";
@@ -79,6 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 TextFormField(
                   obscureText: hidden,
+                  controller: passwordController,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Password is required";
@@ -131,25 +139,47 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text("Login Successful",
-                          style: TextStyle(
-                            color: Colors.green,
+                      enteredEmail = emailController.text;
+                      enteredPassword = passwordController.text;
+                      print("$enteredEmail\n$enteredPassword");
+                      bool success =
+                          enteredEmail == "ansh@gmail.com" &&
+                          enteredPassword == "anshrastogi";
+
+                      if (success) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              "Login Successful",
+                              style: TextStyle(color: Colors.green),
+                            ),
                           ),
-                        )
-                      )
-                    );
+                        );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Greetscreen(),
+                          ),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              "Invalid User!",
+                              style: TextStyle(color: Colors.red),
+                            ),
+                          ),
+                        );
+                      }
                     } else {
-                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text("Please fix the errors",
-                          style: TextStyle(
-                            color: Colors.red,
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            "Please fix the errors",
+                            style: TextStyle(color: Colors.red),
                           ),
-                        )
-                      )
-                    );
+                        ),
+                      );
                     }
                   },
                   child: Text("Login"),
@@ -167,5 +197,12 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 }
