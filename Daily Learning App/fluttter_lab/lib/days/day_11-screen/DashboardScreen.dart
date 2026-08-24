@@ -169,8 +169,14 @@ class IncomeCard extends StatelessWidget {
     return Material(
       child: InkWell(
         onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("IncomeCard One Tap Detected!")),
+          showModalBottomSheet(
+            context: context,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+            ),
+            builder: (context) {
+              return BottomIncomeDetails();
+            },
           );
         },
         onDoubleTap: () {
@@ -269,8 +275,14 @@ class ExpenseCard extends StatelessWidget {
     return Material(
       child: InkWell(
         onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("ExpenseCard One Tap Detected!")),
+          showModalBottomSheet(
+            context: context,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+            ),
+            builder: (context) {
+              return BottomExpenseDetails();
+            },
           );
         },
         onDoubleTap: () {
@@ -354,6 +366,225 @@ class ExpenseCard extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class BottomIncomeDetails extends StatelessWidget {
+  const BottomIncomeDetails({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(24),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Top handle
+          Center(
+            child: Container(
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: Colors.grey.shade300,
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+          ),
+
+          SizedBox(height: 24),
+
+          // Title
+          Text(
+            "Income Details",
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
+          ),
+
+          SizedBox(height: 20),
+
+          // Amount
+          Text(
+            "₹ 35,000",
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Colors.green.shade700,
+            ),
+          ),
+
+          SizedBox(height: 8),
+
+          // Growth
+          Row(
+            children: [
+              Icon(Icons.trending_up, color: Colors.green, size: 20),
+
+              SizedBox(width: 6),
+
+              Text(
+                "+8.2% from last month",
+                style: TextStyle(
+                  color: Colors.green.shade700,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+
+          SizedBox(height: 24),
+
+          Divider(),
+
+          SizedBox(height: 12),
+
+          // Details
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Period", style: TextStyle(color: Colors.grey.shade600)),
+
+              Text(
+                "August 2026",
+                style: TextStyle(fontWeight: FontWeight.w600),
+              ),
+            ],
+          ),
+
+          SizedBox(height: 14),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Status", style: TextStyle(color: Colors.grey.shade600)),
+
+              Text(
+                "Received",
+                style: TextStyle(
+                  color: Colors.green.shade700,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+
+          SizedBox(height: 24),
+        ],
+      ),
+    );
+  }
+}
+
+class BottomExpenseDetails extends StatelessWidget {
+  const BottomExpenseDetails({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(24),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Top handle
+          Center(
+            child: Container(
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: Colors.grey.shade300,
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+          ),
+
+          SizedBox(height: 24),
+
+          // Title
+          Text(
+            "Expense Details",
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
+          ),
+
+          SizedBox(height: 20),
+
+          // Amount
+          Text(
+            "₹ 10,420",
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Colors.red.shade700,
+            ),
+          ),
+
+          SizedBox(height: 8),
+
+          // Growth
+          Row(
+            children: [
+              Icon(Icons.trending_down, color: Colors.red, size: 20),
+
+              SizedBox(width: 6),
+
+              Text(
+                "-4.5% from last month",
+                style: TextStyle(
+                  color: Colors.red.shade700,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+
+          SizedBox(height: 24),
+
+          Divider(),
+
+          SizedBox(height: 12),
+
+          // Period
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Period", style: TextStyle(color: Colors.grey.shade600)),
+
+              Text(
+                "August 2026",
+                style: TextStyle(fontWeight: FontWeight.w600),
+              ),
+            ],
+          ),
+
+          SizedBox(height: 14),
+
+          // Status
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Status", style: TextStyle(color: Colors.grey.shade600)),
+
+              Text(
+                "Paid",
+                style: TextStyle(
+                  color: Colors.red.shade700,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+
+          SizedBox(height: 24),
+        ],
       ),
     );
   }
