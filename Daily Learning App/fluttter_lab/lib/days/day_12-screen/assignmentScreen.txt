@@ -1,0 +1,71 @@
+┌─────────────────────────────────────┐
+│  ←  Budget Planner             ⚙️   │
+├─────────────────────────────────────┤
+│                                     │
+│  Set Your Monthly Budget            │
+│  Control your spending limit        │
+│                                     │
+│  ┌───────────────────────────────┐  │
+│  │       Monthly Budget          │  │
+│  │                               │  │
+│  │          ₹ 25,000             │  │
+│  │                               │  │
+│  │  ₹5k ───────●──────── ₹50k   │  │
+│  └───────────────────────────────┘  │
+│                                     │
+│  Budget Type                        │
+│                                     │
+│  ○ Monthly     ○ Weekly             │
+│                                     │
+│  Spending Categories                │
+│                                     │
+│  ☑ Food                             │
+│  ☑ Transport                        │
+│  ☐ Shopping                         │
+│  ☐ Entertainment                    │
+│                                     │
+│  Notifications              ON 🔘   │
+│                                     │
+│  ┌───────────────────────────────┐  │
+│  │       Save Budget             │  │
+│  └───────────────────────────────┘  │
+└─────────────────────────────────────┘
+
+
+
+WIDGET TREE
+
+Scaffold
+│
+├── AppBar
+│    └── Title: "Budget Planner"
+│
+└── Body
+     │
+     └── SafeArea
+          │
+          └── SingleChildScrollView
+               │
+               └── Padding
+                    │
+                    └── Column
+                         │
+                         ├── Header
+                         │
+                         ├── SizedBox
+                         │
+                         ├── Budget Card
+                         │
+                         ├── SizedBox
+                         │
+                         ├── Budget Type Section
+                         │
+                         ├── SizedBox
+                         │
+                         ├── Categories Section
+                         │
+                         ├── SizedBox
+                         │
+                         ├── Notification Section
+                         │
+                         └── Save Button
