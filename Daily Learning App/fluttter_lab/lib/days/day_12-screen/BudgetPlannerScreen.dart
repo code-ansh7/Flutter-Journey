@@ -14,6 +14,7 @@ class _BudgetplannerscreenState extends State<Budgetplannerscreen> {
   bool transport = false;
   bool shopping = false;
   bool entertainment = false;
+  bool autoSave = false;
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +29,38 @@ class _BudgetplannerscreenState extends State<Budgetplannerscreen> {
                 // Budget Card Section
                 Container(
                   height: 200,
-                  color: Colors.white70,
                   padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        blurRadius: 10,
+                        offset: Offset(0, 3),
+                        spreadRadius: 2,
+                      ),
+                    ],
+                  ),
                   child: Column(
                     children: [
-                      Text("Monthly Budget"),
+                      Text(
+                        "Monthly Budget",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
                       SizedBox(height: 20),
-                      Text("₹ ${budget.toInt()}"),
+                      Text(
+                        "₹ ${budget.toInt()}",
+                        style: TextStyle(
+                          color: Colors.black87,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       Slider(
                         min: 500,
                         max: 50000,
@@ -136,7 +162,7 @@ class _BudgetplannerscreenState extends State<Budgetplannerscreen> {
                         Text("Food"),
                       ],
                     ),
-                    SizedBox(height: 5,),
+                    SizedBox(height: 5),
                     // Transport
                     Row(
                       children: [
@@ -152,7 +178,7 @@ class _BudgetplannerscreenState extends State<Budgetplannerscreen> {
                         Text("Transport"),
                       ],
                     ),
-                    SizedBox(height: 5,),
+                    SizedBox(height: 5),
                     // Shopping
                     Row(
                       children: [
@@ -168,7 +194,7 @@ class _BudgetplannerscreenState extends State<Budgetplannerscreen> {
                         Text("Shopping"),
                       ],
                     ),
-                    SizedBox(height: 5,),
+                    SizedBox(height: 5),
                     // Entertainment
                     Row(
                       children: [
@@ -184,13 +210,86 @@ class _BudgetplannerscreenState extends State<Budgetplannerscreen> {
                         Text("Entertainment"),
                       ],
                     ),
-                  
+                  ],
+                ),
+
+                SizedBox(height: 20),
+
+                // Settings Section
+                Column(
+                  children: [
+                    Text(
+                      "Settings",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 10,
+                            offset: Offset(0, 3),
+                            spreadRadius: 2,
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Auto Save Budget",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  "Automatically save your budget changes",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.grey.shade600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          Switch(
+                            
+                            value: autoSave,
+                            onChanged: (value) {
+                              setState(() {
+                                autoSave = value;
+                                if (autoSave) {
+                                  print("ON");
+                                } else {
+                                  print("OFF");
+                                }
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               
                 SizedBox(height: 20,),
 
-                
+
               ],
             ),
           ),
