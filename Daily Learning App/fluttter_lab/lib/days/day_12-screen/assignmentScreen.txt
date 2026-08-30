@@ -1,44 +1,87 @@
-┌─────────────────────────────────────┐
-│  ←  Budget Planner             ⚙️   │
-├─────────────────────────────────────┤
-│                                     │
-│  Set Your Monthly Budget            │
-│  Control your spending limit        │
-│                                     │
-│  ┌───────────────────────────────┐  │
-│  │       Monthly Budget          │  │
-│  │                               │  │
-│  │          ₹ 25,000             │  │
-│  │                               │  │
-│  │  ₹5k ───────●──────── ₹50k   │  │
-│  └───────────────────────────────┘  │
-│                                     │
-│  Budget Type                        │
-│                                     │
-│  ○ Monthly     ○ Weekly             │
-│                                     │
-│  Spending Categories                │
-│                                     │
-│  ☑ Food                             │
-│  ☑ Transport                        │
-│  ☐ Shopping                         │
-│  ☐ Entertainment                    │
-│                                     │
-│  Notifications              ON 🔘   │
-│                                     │
-│  ┌───────────────────────────────┐  │
-│  │       Save Budget             │  │
-│  └───────────────────────────────┘  │
-└─────────────────────────────────────┘
+============================================================
+             FLUTTER DAY 12 — ASSIGNMENT
+                BUDGET PLANNER SCREEN
+============================================================
 
 
+📌 SCREEN NAME
+------------------------------------------------------------
 
-WIDGET TREE
+Budget Planner
+
+
+🎯 SCREEN OBJECTIVE
+------------------------------------------------------------
+
+Create a professional real-world Budget Planner screen
+using Flutter input controls and dynamic UI.
+
+The user should be able to:
+
+• Set a monthly budget
+• Select budget type
+• Select multiple spending categories
+• Enable / disable Auto Save
+• View a dynamic Budget Summary
+• See total allocated amount
+• See remaining budget
+• See selected categories
+• See Auto Save status
+
+
+============================================================
+                    UI STRUCTURE
+============================================================
+
+┌───────────────────────────────────────────────┐
+│              Budget Planner                   │
+├───────────────────────────────────────────────┤
+│                                               │
+│  Monthly Budget                               │
+│                                               │
+│              ₹ 25,000                         │
+│                                               │
+│  ₹500 ─────────●────────────── ₹50,000        │
+│                                               │
+│  Budget Type                                  │
+│                                               │
+│  ◉ Monthly        ○ Weekly                    │
+│                                               │
+│  Spending Categories                          │
+│                                               │
+│  ☐ Food                 ₹8,000                │
+│  ☐ Transport            ₹3,000                │
+│  ☐ Shopping             ₹5,000                │
+│  ☐ Entertainment        ₹2,000                │
+│                                               │
+│  Settings                                     │
+│                                               │
+│  Auto Save Budget                     🔘 ON    │
+│  Automatically save your budget changes       │
+│                                               │
+│  Budget Summary                               │
+│                                               │
+│  Total Budget              ₹25,000            │
+│  Budget Type               Monthly             │
+│  Categories                Food, Shopping      │
+│  Allocated                 ₹13,000             │
+│  ─────────────────────────────────────────     │
+│  Remaining                 ₹12,000             │
+│                                               │
+│  ✓ Auto Save is ON                            │
+│                                               │
+└───────────────────────────────────────────────┘
+
+
+============================================================
+                    WIDGET TREE
+============================================================
 
 Scaffold
 │
 ├── AppBar
-│    └── Title: "Budget Planner"
+│    └── Text
+│         └── "Budget Planner"
 │
 └── Body
      │
@@ -50,22 +93,459 @@ Scaffold
                     │
                     └── Column
                          │
-                         ├── Header
-                         │
-                         ├── SizedBox
-                         │
                          ├── Budget Card
+                         │    │
+                         │    └── Container
+                         │         │
+                         │         └── Column
+                         │              ├── Text
+                         │              │    └── "Monthly Budget"
+                         │              │
+                         │              ├── SizedBox
+                         │              │
+                         │              ├── Text
+                         │              │    └── Dynamic Budget
+                         │              │
+                         │              ├── Slider
+                         │              │
+                         │              └── Row
+                         │                   ├── Text
+                         │                   │    └── ₹500
+                         │                   │
+                         │                   └── Text
+                         │                        └── ₹50,000
                          │
                          ├── SizedBox
                          │
                          ├── Budget Type Section
+                         │    │
+                         │    └── Column
+                         │         ├── Text
+                         │         │    └── "Budget Type"
+                         │         │
+                         │         └── Container
+                         │              │
+                         │              └── Row
+                         │                   ├── Radio<String>
+                         │                   │    └── Monthly
+                         │                   │
+                         │                   ├── Text
+                         │                   │    └── Monthly
+                         │                   │
+                         │                   ├── SizedBox
+                         │                   │
+                         │                   ├── Radio<String>
+                         │                   │    └── Weekly
+                         │                   │
+                         │                   └── Text
+                         │                        └── Weekly
                          │
                          ├── SizedBox
                          │
-                         ├── Categories Section
+                         ├── Spending Categories
+                         │    │
+                         │    └── Container
+                         │         │
+                         │         └── Column
+                         │              ├── CheckboxListTile
+                         │              │    ├── Food
+                         │              │    └── ₹8,000
+                         │              │
+                         │              ├── CheckboxListTile
+                         │              │    ├── Transport
+                         │              │    └── ₹3,000
+                         │              │
+                         │              ├── CheckboxListTile
+                         │              │    ├── Shopping
+                         │              │    └── ₹5,000
+                         │              │
+                         │              └── CheckboxListTile
+                         │                   ├── Entertainment
+                         │                   └── ₹2,000
                          │
                          ├── SizedBox
                          │
-                         ├── Notification Section
+                         ├── Settings
+                         │    │
+                         │    └── Container
+                         │         │
+                         │         └── Row
+                         │              ├── Expanded
+                         │              │    └── Column
+                         │              │         ├── Text
+                         │              │         │    └── Auto Save Budget
+                         │              │         │
+                         │              │         └── Text
+                         │              │              └── Description
+                         │              │
+                         │              └── Switch
                          │
-                         └── Save Button
+                         ├── SizedBox
+                         │
+                         ├── Budget Summary
+                         │    │
+                         │    └── Container
+                         │         │
+                         │         └── Column
+                         │              ├── Row
+                         │              │    ├── Total Budget
+                         │              │    └── Dynamic Amount
+                         │              │
+                         │              ├── SizedBox
+                         │              │
+                         │              ├── Row
+                         │              │    ├── Budget Type
+                         │              │    └── Dynamic Type
+                         │              │
+                         │              ├── SizedBox
+                         │              │
+                         │              ├── Row
+                         │              │    ├── Categories
+                         │              │    └── Dynamic Categories
+                         │              │
+                         │              ├── SizedBox
+                         │              │
+                         │              ├── Row
+                         │              │    ├── Allocated
+                         │              │    └── Dynamic Amount
+                         │              │
+                         │              ├── Divider
+                         │              │
+                         │              ├── Row
+                         │              │    ├── Remaining
+                         │              │    └── Dynamic Amount
+                         │              │
+                         │              └── Row
+                         │                   ├── Icon
+                         │                   └── Auto Save Status
+                         │
+                         └── SizedBox
+
+
+============================================================
+                  STATE VARIABLES
+============================================================
+
+double budget = 25000;
+
+String? budgetType = "Monthly";
+
+bool food = false;
+
+bool transport = false;
+
+bool shopping = false;
+
+bool entertainment = false;
+
+double foodBudget = 8000;
+
+double transportBudget = 3000;
+
+double shoppingBudget = 5000;
+
+double entertainmentBudget = 2000;
+
+bool autoSave = false;
+
+
+============================================================
+                 DAY 12 CONCEPTS USED
+============================================================
+
+1. Slider
+   ↓
+   Dynamic budget selection
+
+2. Radio
+   ↓
+   Single selection
+   Monthly / Weekly
+
+3. Checkbox
+   ↓
+   Multiple selections
+   Food / Transport / Shopping / Entertainment
+
+4. CheckboxListTile
+   ↓
+   Checkbox + title + subtitle in one UI component
+
+5. Switch
+   ↓
+   Auto Save ON / OFF
+
+6. setState()
+   ↓
+   UI ko state change ke according rebuild karna
+
+7. Conditional UI
+   ↓
+   Auto Save status dynamically change karna
+
+8. Dynamic calculations
+   ↓
+   Total Allocated
+   Remaining Budget
+
+9. SingleChildScrollView
+   ↓
+   Long screen ko scrollable banana
+
+
+============================================================
+                 REAL-WORLD LOGIC
+============================================================
+
+BUDGET
+
+User Slider move karta hai
+        ↓
+budget value change hoti hai
+        ↓
+setState()
+        ↓
+UI rebuild
+        ↓
+Budget Summary update
+
+
+------------------------------------------------------------
+
+BUDGET TYPE
+
+User Monthly / Weekly select karta hai
+        ↓
+budgetType change
+        ↓
+setState()
+        ↓
+Summary mein selected type update
+
+
+------------------------------------------------------------
+
+SPENDING CATEGORIES
+
+User multiple categories select kar sakta hai
+
+Food
+Transport
+Shopping
+Entertainment
+
+        ↓
+
+Selected category ka budget
+        ↓
+totalAllocated mein add
+        ↓
+remainingBudget calculate
+
+remainingBudget = budget - totalAllocated
+
+
+------------------------------------------------------------
+
+AUTO SAVE
+
+Switch OFF
+        ↓
+"Auto Save is OFF"
+
+Switch ON
+        ↓
+"Auto Save is ON"
+
+
+============================================================
+                CALCULATIONS
+============================================================
+
+Example:
+
+Total Budget = ₹25,000
+
+Food = ₹8,000
+Transport = ₹3,000
+Shopping = ₹5,000
+Entertainment = ₹2,000
+
+
+If Food + Shopping selected:
+
+Allocated:
+
+₹8,000 + ₹5,000
+
+= ₹13,000
+
+
+Remaining:
+
+₹25,000 - ₹13,000
+
+= ₹12,000
+
+
+If all categories selected:
+
+₹8,000
++ ₹3,000
++ ₹5,000
++ ₹2,000
+
+= ₹18,000
+
+
+Remaining:
+
+₹25,000 - ₹18,000
+
+= ₹7,000
+
+
+============================================================
+                 UI DESIGN
+============================================================
+
+Background:
+
+Color(0xFFF7F9FC)
+
+
+Main Cards:
+
+Colors.white
+
+
+Border Radius:
+
+16 - 18
+
+
+Card Padding:
+
+18 - 20
+
+
+Section Gap:
+
+20 - 25
+
+
+Small Gap:
+
+5 - 15
+
+
+Card Shadow:
+
+black with low opacity
+
+
+Typography:
+
+Section Heading
+→ 18px
+→ Bold
+
+Main Amount
+→ 30px
+→ Bold
+
+Normal Text
+→ 13 - 15px
+
+
+Design Goal:
+
+✓ Light Theme
+✓ Clean
+✓ Professional
+✓ User Friendly
+✓ Real-world Finance UI
+✓ Easy to understand
+
+
+============================================================
+                    FINAL RESULT
+============================================================
+
+The Budget Planner screen should allow the user to
+interactively configure a budget and immediately see
+the effect of those changes in the Budget Summary.
+
+The screen demonstrates:
+
+UI
++
+User Input
++
+State
++
+setState()
++
+Conditional UI
++
+Calculations
++
+Professional Layout
+
+
+============================================================
+                  DAY 12 CHECKLIST
+============================================================
+
+[✓] Slider implemented
+
+[✓] Dynamic budget value
+
+[✓] Radio buttons implemented
+
+[✓] Monthly / Weekly selection
+
+[✓] Multiple checkboxes
+
+[✓] Spending categories
+
+[✓] CheckboxListTile
+
+[✓] Switch implemented
+
+[✓] Auto Save state
+
+[✓] Conditional Auto Save text
+
+[✓] Budget calculation
+
+[✓] Allocated amount calculation
+
+[✓] Remaining amount calculation
+
+[✓] Selected categories displayed
+
+[✓] Budget Summary
+
+[✓] SingleChildScrollView
+
+[✓] Professional light UI
+
+
+============================================================
+                FINAL SCREEN STATUS
+============================================================
+
+DAY 12 — COMPLETED ✅🔥
+
+Concept:
+More Input Controls + Dynamic UI
+
+Project:
+Professional Budget Planner
+
+Difficulty:
+⭐⭐⭐☆☆
+
+Status:
+COMPLETED ✅
