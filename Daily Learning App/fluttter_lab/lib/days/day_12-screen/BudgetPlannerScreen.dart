@@ -8,9 +8,12 @@ class Budgetplannerscreen extends StatefulWidget {
 }
 
 class _BudgetplannerscreenState extends State<Budgetplannerscreen> {
-  
   double budget = 25000;
-  String? budgetType = "Monthly";//Taki screen load hote hi ye selected rhe 
+  String? budgetType = "Monthly"; //Taki screen load hote hi ye selected rhe
+  bool food = false;
+  bool transport = false;
+  bool shopping = false;
+  bool entertainment = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,6 @@ class _BudgetplannerscreenState extends State<Budgetplannerscreen> {
             padding: EdgeInsets.all(20),
             child: Column(
               children: [
-
                 // Budget Card Section
                 Container(
                   height: 200,
@@ -104,6 +106,91 @@ class _BudgetplannerscreenState extends State<Budgetplannerscreen> {
                     ),
                   ],
                 ),
+
+                SizedBox(height: 20),
+
+                // Spending Categories Section
+                Column(
+                  children: [
+                    Text(
+                      "Spending Categories",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    // Food
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: food,
+                          onChanged: (value) {
+                            setState(() {
+                              food = value!;
+                              print("Food : $food");
+                            });
+                          },
+                        ),
+                        Text("Food"),
+                      ],
+                    ),
+                    SizedBox(height: 5,),
+                    // Transport
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: transport,
+                          onChanged: (value) {
+                            setState(() {
+                              transport = value!;
+                              print("Transport : $transport");
+                            });
+                          },
+                        ),
+                        Text("Transport"),
+                      ],
+                    ),
+                    SizedBox(height: 5,),
+                    // Shopping
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: shopping,
+                          onChanged: (value) {
+                            setState(() {
+                              shopping = value!;
+                              print("Shopping : $shopping");
+                            });
+                          },
+                        ),
+                        Text("Shopping"),
+                      ],
+                    ),
+                    SizedBox(height: 5,),
+                    // Entertainment
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: entertainment,
+                          onChanged: (value) {
+                            setState(() {
+                              entertainment = value!;
+                              print("Entertainment : $entertainment");
+                            });
+                          },
+                        ),
+                        Text("Entertainment"),
+                      ],
+                    ),
+                  
+                  ],
+                ),
+              
+                SizedBox(height: 20,),
+
+                
               ],
             ),
           ),
