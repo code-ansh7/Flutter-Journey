@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttter_lab/days/day_13-screen/GridViewBuilderScreen.dart';
 
 class ListViewBuilderScreen extends StatelessWidget {
   const ListViewBuilderScreen({super.key});
@@ -92,6 +93,18 @@ class ListViewBuilderScreen extends StatelessWidget {
                   },
                 ),
               ),
+
+                TextButton(
+                onPressed: (){
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(
+                      builder: (context) => GridViewBuilderScreen()
+                    ),
+                  );
+                }, 
+                child: Text("GridView Pattern")
+              )
             ],
           ),
         ),

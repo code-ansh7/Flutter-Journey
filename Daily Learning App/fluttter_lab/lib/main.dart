@@ -26,9 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter Lab",
-      // home: Apphome(),
-      home: Expenseslist(),
-      // home: ListViewBuilderScreen(),
+      home: Apphome(),
     );
   }
 }
