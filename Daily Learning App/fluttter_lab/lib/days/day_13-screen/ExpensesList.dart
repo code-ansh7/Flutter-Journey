@@ -310,17 +310,17 @@ class _ExpenseslistState extends State<Expenseslist> {
                 ),
               ),
 
-              // TextButton(
-              //   onPressed: (){
-              //     Navigator.push(
-              //       context, 
-              //       MaterialPageRoute(
-              //         builder: (context) => ExpensesGrid()
-              //       ),
-              //     );
-              //   }, 
-              //   child: Text("GridView Pattern")
-              // )
+              TextButton(
+                onPressed: (){
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(
+                      builder: (context) => ExpensesGrid()
+                    ),
+                  );
+                }, 
+                child: Text("GridView Pattern")
+              )
             ],
           ),
         ),
