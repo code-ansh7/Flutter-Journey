@@ -1,0 +1,68 @@
+┌──────────────────────────────┐
+│  Calculator             ⋮    │
+│                              │
+│                              │
+│                 125 + 25     │
+│                    150       │
+│                              │
+├──────────────────────────────┤
+│                              │
+│   AC       ±       %       ÷ │
+│                              │
+│    7       8       9       × │
+│                              │
+│    4       5       6       − │
+│                              │
+│    1       2       3       + │
+│                              │
+│    0               .       = │
+│                              │
+└──────────────────────────────┘
+
+Scaffold
+│
+├── AppBar
+│    └── Text("Calculator")
+│
+└── Body
+     │
+     └── SafeArea
+          │
+          └── Padding
+               │
+               └── Column
+                    │
+                    ├── Expanded
+                    │    └── Display Area
+                    │
+                    ├── SizedBox
+                    │
+                    ├── Row
+                    │    ├── Button
+                    │    ├── Button
+                    │    ├── Button
+                    │    └── Button
+                    │
+                    ├── Row
+                    │    ├── Button
+                    │    ├── Button
+                    │    ├── Button
+                    │    └── Button
+                    │
+                    ├── Row
+                    │    ├── Button
+                    │    ├── Button
+                    │    ├── Button
+                    │    └── Button
+                    │
+                    ├── Row
+                    │    ├── Button
+                    │    ├── Button
+                    │    ├── Button
+                    │    └── Button
+                    │
+                    └── Row
+                         ├── Button
+                         ├── Button
+                         ├── Button
+                         └── Button

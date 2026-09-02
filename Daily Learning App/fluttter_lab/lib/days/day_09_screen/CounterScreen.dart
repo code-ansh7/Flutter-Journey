@@ -31,7 +31,7 @@ class _CounterscreenState extends State<Counterscreen> {
 
       body: Center(
         child: Container(
-          height: 380,
+          height: 400,
           width: 300,
           decoration: BoxDecoration(
             color: Colors.grey.shade400,

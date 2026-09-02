@@ -11,11 +11,11 @@ import 'package:fluttter_lab/days/day_13-screen/ExpensesGrid.dart';
 import 'package:fluttter_lab/days/day_13-screen/ExpensesList.dart';
 import 'package:fluttter_lab/days/day_13-screen/GridViewBuilderScreen.dart';
 import 'package:fluttter_lab/days/day_13-screen/ListViewBuilderScreen.dart';
-
 import 'package:fluttter_lab/practice/Background.dart';
 import 'package:fluttter_lab/practice/CyberDashboard.dart';
 import 'package:fluttter_lab/practice/GlassLoginScreen.dart';
 import 'package:fluttter_lab/practice/LoginScreenGit.dart';
+import 'package:fluttter_lab/practice/ModernUICalculator.dart';
 import 'package:fluttter_lab/practice/TestingScreen.dart';
 import 'package:fluttter_lab/practice/bmi_calculator.dart';
 import 'package:fluttter_lab/practice/calculator.dart';
@@ -266,6 +266,14 @@ class Apphome extends StatelessWidget {
                     "07",
                     "Glassmorphism Login Screen",
                     GlassLoginScreen(),
+                  ),
+
+                  // PRACTICE 8
+                   buildPracticeCard(
+                    context,
+                    "08",
+                    "Modern UI Calculator",
+                    Modernuicalculator()
                   ),
 
                   const SizedBox(height: 20),

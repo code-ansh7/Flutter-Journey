@@ -103,7 +103,7 @@ class _GlassLoginScreenState extends State<GlassLoginScreen> {
 
           Center(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.all(24),
+              padding: const EdgeInsets.all(20),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30),
 
