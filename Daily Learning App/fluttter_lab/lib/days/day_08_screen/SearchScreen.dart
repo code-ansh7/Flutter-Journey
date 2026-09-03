@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluttter_lab/days/day_07_screen/MusicPlayerScreen.dart';
 import 'package:fluttter_lab/days/day_09_screen/CounterScreen.dart';
 
 class SearchScreen extends StatefulWidget {

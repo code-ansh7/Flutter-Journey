@@ -274,11 +274,7 @@ class _ModernuicalculatorState extends State<Modernuicalculator> {
 
                         calculatorButton("3", Colors.white, Colors.black87),
 
-                        calculatorButton(
-                          "+",
-                          const Color(0xff90CAF9),
-                          Colors.blue.shade900,
-                        ),
+                        calculatorButton("+", const Color(0xff90CAF9),  Colors.blue.shade900,),
                       ],
                     ),
 
