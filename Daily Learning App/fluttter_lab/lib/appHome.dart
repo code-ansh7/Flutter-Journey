@@ -11,6 +11,7 @@ import 'package:fluttter_lab/days/day_13-screen/ExpensesGrid.dart';
 import 'package:fluttter_lab/days/day_13-screen/ExpensesList.dart';
 import 'package:fluttter_lab/days/day_13-screen/GridViewBuilderScreen.dart';
 import 'package:fluttter_lab/days/day_13-screen/ListViewBuilderScreen.dart';
+import 'package:fluttter_lab/days/day_14_screen/ExpenseDashboard.dart';
 import 'package:fluttter_lab/practice/Background.dart';
 import 'package:fluttter_lab/practice/CyberDashboard.dart';
 import 'package:fluttter_lab/practice/GlassLoginScreen.dart';
@@ -185,6 +186,14 @@ class Apphome extends StatelessWidget {
                     "Day 13",
                     "GridView.builder Practice",
                     GridViewBuilderScreen(),
+                  ),
+
+                  // DAY 14 Combined Screen
+                  buildDayCard(
+                    context, 
+                    "Day 14", 
+                    "Modern Expense Dashboard", 
+                    Expensedashboard()
                   ),
 
                   const SizedBox(height: 25),

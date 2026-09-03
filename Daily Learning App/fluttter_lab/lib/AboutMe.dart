@@ -42,7 +42,7 @@ class AboutMe extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/Background2.webp"),
+            image: AssetImage("assets/images/Background.webp"),
             fit: BoxFit.cover,
           ),
         ),
